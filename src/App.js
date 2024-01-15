@@ -1,13 +1,17 @@
 import './App.css';
 import Header from './component/Header';
-import Member from './component/Member';
+import heroes from './heroes.json';
+import Card from './component/Card';
+
 
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Member />
+      {heroes.map((item, index) => {
+        return <Card name={item.name} universe={item.universe} alterego={item.alterego} occupation={item.occupation} friends={item.friends} superpowers={item.superpowers} info={item.info} url={item.url} key={index} />
+      })}
     </div>
 
   );
